@@ -26,6 +26,11 @@ class RouteServiceProvider extends ServiceProvider
         //
 
         parent::boot();
+
+        // bind fetching bookmark according to current user
+        \Route::bind('bookmark', function($id){
+            return \Auth::user()->bookmarks()->findOrFail($id);
+        });
     }
 
     /**

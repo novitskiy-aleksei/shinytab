@@ -11,10 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/', ['uses' => 'HomeController@index', 'as' => 'home']);
+
+Route::resource('bookmark', 'BookmarksController');
