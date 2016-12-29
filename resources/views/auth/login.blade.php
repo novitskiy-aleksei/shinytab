@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('styles')
+    <link href="{{ asset('css/bootstrap-social.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" />
+@stop
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -7,6 +12,25 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
+
+                    <div class="text-center form-group">
+                        <a class="btn btn-social-icon btn-lg btn-vk" href="{{ route('social_login', ['provider' => 'vkontakte']) }}" >
+                            <i class="fa fa-vk"></i>
+                        </a>
+
+                        <a class="btn btn-social-icon btn-lg btn-twitter" href="{{ route('social_login', ['provider' => 'twitter']) }}">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+
+                        <a class="btn btn-social-icon btn-lg btn-google" href="{{ route('social_login', ['provider' => 'google']) }}">
+                            <i class="fa fa-google"></i>
+                        </a>
+
+                        <a class="btn btn-social-icon btn-lg btn-facebook" href="{{ route('social_login', ['provider' => 'facebook']) }}">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
 

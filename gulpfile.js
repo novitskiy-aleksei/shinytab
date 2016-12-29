@@ -19,3 +19,9 @@ elixir(mix => {
 
     mix.copy('node_modules/bootstrap-sass/assets/fonts/bootstrap/', 'public/fonts/bootstrap');
 });
+
+elixir(function(mix) {
+    mix.copy("./bower_components/font-awesome/css/font-awesome.min.css", 'public/css/font-awesome.min.css');
+    mix.copy('./bower_components/font-awesome/fonts', 'public/fonts');
+    mix.copy('./bower_components/bootstrap-social/bootstrap-social.css', 'public/css/bootstrap-social.css');
+});

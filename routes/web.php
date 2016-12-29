@@ -15,4 +15,7 @@ Auth::routes();
 
 Route::get('/', ['uses' => 'HomeController@index', 'as' => 'home']);
 
+Route::get('auth/{provider}', ['uses' => 'Auth\SocialAuthController@redirectToProvider', 'as' => 'social_login']);
+Route::get('auth/{provider}/callback', 'Auth\SocialAuthController@handleProviderCallback');
+
 Route::resource('bookmark', 'BookmarksController');
